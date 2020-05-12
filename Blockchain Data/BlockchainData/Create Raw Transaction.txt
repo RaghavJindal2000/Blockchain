@@ -1,0 +1,131 @@
+listunspent 
+
+
+gettxout command 
+Command
+Command Parameters:
+
+gettxout "txid" n
+Arguments:
+
+"txid" (string, required) The transaction id
+"n" (numeric, required) vout number
+
+
+
+
+
+createrawtransaction '[{"txid":"TXID","vout": VOUT}]’’{“to_address”:amount1, “from_address”:amount2}’
+
+txid =1
+vout =1
+to:
+from 
+
+ 
+
+
+
+Command
+We will use the createrawtransaction command:
+
+Command Parameters:
+
+createrawtransaction '[{"txid":"TXID","vout": VOUT}]’’{“to_address”:amount1, “from_address”:amount2}’
+Build Out Command
+txid: e787a27bda32c8b54ee501be46d2cfcd47c1566c8ef6ee339bdb7cd5c82b701c
+
+vout: 0
+
+to_address: 2NFK8YHKT6hPPTDKTPP3c5bx7oPGrYhzj2y
+
+from_address: 2Mzxx8wGAmQQyCCrb2vXP4yxaYY9s9nepfy
+
+amount1: .030 BTC being sent to "to_address"
+
+amount2: 0.0195 BTC being sent back to the "from_address"
+
+Execute Command
+
+createrawtransaction '[{"txid": "b64c160999b11638069b1e66b14ba6c27725bf1137f50f0cb1a4cc99602d96b8"vout":1}]' '{"2NAN41tNySEp83NDNRC78S4h5AM6FBzdJnV":0.00010, "2N6W79Q2WER9oPbhZ8gRqmZKNLyrptNehcs":0.00005}'
+
+createrawtransaction '[{"txid": "e787a27bda32c8b54ee501be46d2cfcd47c1566c8ef6ee339bdb7cd5c82b701c", "vout":0}]' '{"2NFK8YHKT6hPPTDKTPP3c5bx7oPGrYhzj2y":0.030, "2Mzxx8wGAmQQyCCrb2vXP4yxaYY9s9nepfy":0.0195}'
+
+
+
+
+
+
+
+
+Command
+decoderawtransaction
+
+Command Parameters:
+
+decoderawtransaction "hexstring"
+Arguments:
+
+1. "hexstring"      (string, required) The transaction hex string
+Execute command
+decoderawtransaction 02000000011c702bc8d57cdb9b33eef68e6c56c147cdcfd246be01e54eb5c832da7ba287e70000000000ffffffff02c0c62d000000000017a914f20fe211102535e3c37bb0e659099387ddc035b58730c11d000000000017a91454ad1e8953876c90d3fc15798c687835ab3d3aee8700000000
+
+
+
+
+
+
+
+
+Command
+In this section, we will use command to sign the transaction.
+
+Command Parameters:
+
+signrawtransactionwithwallet "hexstring" 
+Arguments:
+
+"hexstring" (string, required) The transaction hex string from the "createrawtransaction" step
+Execute Command
+Note: If your wallet is encrypted, you will be asked to unlock it before you can sign a transaction.
+
+signrawtransactionwithwallet 02000000011c702bc8d57cdb9b33eef68e6c56c147cdcfd246be01e54eb5c832da7ba287e70000000000ffffffff02c0c62d000000000017a914f20fe211102535e3c37bb0e659099387ddc035b58760e316000000000017a91454ad1e8953876c90d3fc15798c687835ab3d3aee8700000000 
+Note: If you have a version of Bitcoin core that is older than 0.17, you might have to use command.
+
+
+
+
+
+
+
+Command
+We will use the sendrawtransaction command.
+
+Command Parameters:
+
+sendrawtransaction "hexstring" ( allowhighfees )
+Arguments:
+
+1. "hexstring"    (string, required) The hex string of the raw transaction)
+2. allowhighfees    (boolean, optional, default=false) Allow high fees
+Result:
+
+"hex"             (string) The transaction hash in hex
+Execute Command
+
+
+
+
+Command
+We will use the gettransaction command.
+
+Command Parameters:
+
+gettransaction "txid"
+Arguments:
+
+1. "txid"                  (string, required) The transaction id
+
+
+
+

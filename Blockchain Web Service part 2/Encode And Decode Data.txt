@@ -1,0 +1,15 @@
+TO HEX and Reverse 
+xxd -p   
+xxd -r -p
+
+
+
+if in textfile 
+xxd - p filename.txt newfilename.txt
+xxd -p -r newfilename.txt newfilenamedecoded.txt
+
+
+can be done with images also 
+xxd - p filename.png newfilename.txt
+xxd -p -r newfilename.txt newfilenamedecoded.png
+
